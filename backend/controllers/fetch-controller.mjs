@@ -1,3 +1,6 @@
+import { blockchain } from '../server.mjs';
+
 export const listChain = (req, res, next) => {
-  res.status(200).json({ message: "List chain" });
+  const chain = blockchain.chain;
+  res.status(200).json({ success: true, statusCode: 200, data: chain });
 };
