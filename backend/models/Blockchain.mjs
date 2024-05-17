@@ -1,23 +1,20 @@
-import { Block } from './Block.mjs';
-import { createHash } from '../utilities/crypto-lib.mjs';
+import Block from './Block.mjs';
 
-class Blockchain {
+export class Blockchain {
   constructor() {
-    this.chain = [this.createGenesisBlock()];
+    this.chain = [Block.genesis];
+    this.transactions = [];
   }
 
-  createGenesisBlock() {
-    return new Block(0, '0', 1465154705, 'Genesis Block', '0');
-  }
-
-  getLatestBlock() {
-    return this.chain[this.chain.length - 1];
-  }
-
-  addBlock(newBlock) {
-    newBlock.previousHash = this.getLatestBlock().hash;
-    newBlock.hash = newBlock.calculateHash();
+  addBlock({ data }) {
+    const lastBlock = this.chain[this.chain.length - 1];
+    const newBlock = Block.mineBlock({ lastBlock, data });
     this.chain.push(newBlock);
+    return newBlock;
+  }
+
+  addTransaction(transaction) {
+    this.transactions.push(transaction);
   }
 
   validateChain() {
@@ -29,13 +26,12 @@ class Blockchain {
         return false;
       }
 
-      if (currentBlock.previousHash !== previousBlock.hash) {
+      if (currentBlock.lastHash !== previousBlock.hash) {
         return false;
       }
     }
-
     return true;
   }
 }
 
-export const blockchain = new Blockchain();
+export default Blockchain;

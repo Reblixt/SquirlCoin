@@ -2,7 +2,7 @@ import hexToBinary from 'hex-to-binary';
 import { GENESIS_DATA, MINE_RATE } from '../config/settings.mjs';
 import { createHash } from '../utilities/crypto-lib.mjs';
 
-export default class Block {
+class Block {
   constructor({ timestamp, lastHash, hash, data, nonce, difficulty }) {
     this.timestamp = timestamp;
     this.lastHash = lastHash;
@@ -49,4 +49,16 @@ export default class Block {
 
     return difficulty + 1;
   }
+
+  calculateHash() {
+    return createHash(
+      this.timestamp,
+      this.lastHash,
+      this.data,
+      this.nonce,
+      this.difficulty,
+    );
+  }
 }
+
+export default Block;

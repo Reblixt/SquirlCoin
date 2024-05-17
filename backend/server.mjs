@@ -1,14 +1,11 @@
 import express from 'express';
 import mainRouter from './Router.mjs';
 import { fullEndpoint } from './config/settings.mjs';
-import { Blockchain } from './models/Blockchain.mjs';
+import Blockchain from './models/Blockchain.mjs';
 import RedisServer from './redisServer.mjs';
 
 export const blockchain = new Blockchain();
-
 export const redisServer = new RedisServer({ blockchain });
-
-const redisServer = new RedisServer({ blockchain });
 
 const app = express();
 
