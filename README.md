@@ -17,4 +17,4 @@ Weekends rest
 http://localhost:5001/api/v1/squirlchain/fetchsquirls
 http://localhost:5001/api/v1/squirlchain/fetchsquirls/1
 http://localhost:5001/api/v1/squirlchain/block/breed
-http://localhost:5001/api/v1/squirlchain/nuttraddings/nuttradding
+http://localhost:5001/api/v1/squirlchain/nuttradings/nuttrading

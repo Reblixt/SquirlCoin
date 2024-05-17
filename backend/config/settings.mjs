@@ -16,7 +16,7 @@ export const fullEndpoint = {
   fetchOne: base + "/fetchsquirls/:id",
 
   // transact routes
-  transact: base + "/nuttraiding",
+  transact: base + "/nuttrading",
 };
 
 export const singleEndpoint = {
@@ -26,8 +26,8 @@ export const singleEndpoint = {
   fetchAll: "/fetchsquirls",
   fetchOne: "/fetchsquirls/:id",
 
-  transactions: "/nuttraddings",
-  transact: "/nuttradding",
+  transactions: "/nuttradings",
+  transact: "/nuttrading",
 };
 
 // uncomment the following section for easier grading this assignment
