@@ -1,6 +1,6 @@
 # SquirlCoin <--- was meant to be...
 
-## Teammembers:
+## Team members:
 
 - Oskar
 - Rasmus
@@ -12,10 +12,9 @@
 Dailystand 8:30.
 Weekends rest
 
-http://squirlcoin.com/api/v1/squirl/listsquirls
-http://squirlcoin.com/squirl/fetchsquirl
-http://squirlcoin.com/squirl/Block/minesquirl
-http://squirlcoin.com/squirl/transactions
-http://squirlcoin.com/squirl/transactions/transactsquirl
+## Endpoints use in the original
 
-serverfilen
+http://localhost:5001/api/v1/squirlchain/fetchsquirls
+http://localhost:5001/api/v1/squirlchain/fetchsquirls/1
+http://localhost:5001/api/v1/squirlchain/block/breed
+http://localhost:5001/api/v1/squirlchain/nuttraddings/nuttradding
