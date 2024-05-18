@@ -18,7 +18,6 @@ export const Blockchain = () => {
             <div><span>Previous Blockhash: </span><span>{block.lastHash}</span></div>
             <div><span>Current Blockchain: </span><span>{block.hash}</span></div>
             <div><span>Nonce: </span><span>{block.nonce}</span></div>
-            {console.log(block.data)}
             <div className="data-wrapper">
               <h4>Data:</h4>
               
@@ -33,7 +32,6 @@ export const Blockchain = () => {
                 ) : ( 
                 <></>
               )}
-              
             </div>
             <div><span>Timestamp: </span><span>{block.timestamp}</span></div>
           </div>

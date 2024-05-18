@@ -32,9 +32,26 @@ export const Block = () => {
           ) : (
           <div>
             <div>Blockindex: {block.blockNumber}</div>
-            <div>Previous Blockhash: {block.previousBlockHash}</div>
-            <div>Current Blockchain: {block.currentBlockHash}</div>
-            <div>Timestamp: {block.timestamp}</div>
+            <div>Previous Blockhash: {block.difficulty}</div>
+            <div>Current Blockchain: {block.lastHash}</div>
+            <div>Timestamp: {block.hash}</div>
+            <div>Timestamp: {block.nonce}</div>
+            <div className="data-wrapper">
+              <h4>Data:</h4>
+              
+                {block.data !== "[]" ? ( 
+                  block.data.map((transaction, index) => (
+                    <div key={index}>
+                      <span>Sender: {transaction.sender}</span>
+                      <span>Recipient: {transaction.recipient}</span>
+                      <span>Amount: {transaction.amount}</span>
+                      <span>Data: {transaction.data}</span>
+                    </div> ))
+                ) : ( 
+                <></>
+              )}
+            </div>
+            <div><span>Timestamp: </span><span>{block.timestamp}</span></div>
           </div>
         )}
         </div>
