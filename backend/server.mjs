@@ -8,6 +8,7 @@ import { handleError, handleUndefined } from "./middleware/error-handler.mjs";
 import { fileURLToPath } from "url";
 import path from "path";
 
+// Varför har vi denna rad?
 global.__appdir = path.dirname(fileURLToPath(import.meta.url));
 
 export const blockchain = new Blockchain();
