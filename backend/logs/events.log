@@ -57,3 +57,7 @@ EVENT - POST( 201 ) - 2024-05-18 14:26:52 - /api/v1/squirlchain/nuttradings/nutt
 EVENT - GET( 200 ) - 2024-05-18 14:26:57 - /api/v1/squirlchain/fetchsquirls 
 EVENT - POST( 201 ) - 2024-05-18 14:27:02 - /api/v1/squirlchain/block/breed 
 EVENT - GET( 200 ) - 2024-05-18 14:27:06 - /api/v1/squirlchain/fetchsquirls 
+EVENT - GET( 200 ) - 2024-05-18 14:34:26 - /api/v1/squirlchain/fetchsquirls 
+ERROR - POST( 500 ) - 2024-05-18 14:34:30 - /api/v1/squirlchain/nuttradings/nuttrading 
+EVENT - POST( 201 ) - 2024-05-18 14:34:58 - /api/v1/squirlchain/nuttradings/nuttrading 
+EVENT - POST( 201 ) - 2024-05-18 14:35:57 - /api/v1/squirlchain/nuttradings/nuttrading 
