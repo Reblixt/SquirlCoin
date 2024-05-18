@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import { useBlockchain } from '../hooks/useBlockchain';
+import { useBlock } from '../hooks/useBlock';
 
 export const Block = () => {
 
-  const { blockchain, loading, error } = useBlockchain();
+  const { fetchBlock } = useBlock();
   const [indexNumber, setIndexNumber] = useState("");
   const [block, setBlock] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const filteredBlock = blockchain.find((block) => block.blockIndex === parseInt(indexNumber))
-    console.log(filteredBlock);
-    setBlock(filteredBlock || "Block not found")
+    const result = await fetchBlock(indexNumber)
+    setBlock(result || "Block not found")
   }
+
+  console.log(indexNumber);
 
   return (
     <div>
@@ -23,15 +25,13 @@ export const Block = () => {
         <button>Submit</button>
       </form>
       <section>
-      {loading && <div>Loading...</div>}
-      {error && <div>Error: {error.message}</div>}
         {block && (
           <div>
           {typeof block === 'string' ? (
             <div>{block}</div>
           ) : (
           <div>
-            <div>Blockindex: {block.blockIndex}</div>
+            <div>Blockindex: {block.blockNumber}</div>
             <div>Previous Blockhash: {block.previousBlockHash}</div>
             <div>Current Blockchain: {block.currentBlockHash}</div>
             <div>Timestamp: {block.timestamp}</div>
