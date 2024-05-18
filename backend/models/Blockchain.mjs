@@ -6,10 +6,12 @@ export class Blockchain {
     this.transactions = [];
   }
 
-  addBlock({ data }) {
+  addBlock() {
     const lastBlock = this.chain[this.chain.length - 1];
+    const data = this.transactions;
     const newBlock = Block.mineBlock({ lastBlock, data });
     this.chain.push(newBlock);
+    this.transactions = [];
     return newBlock;
   }
 
