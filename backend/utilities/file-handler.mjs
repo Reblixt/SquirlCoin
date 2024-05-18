@@ -1,5 +1,6 @@
-import { promises as fs } from 'fs'
+import { promises as fs, appendFileSync } from 'fs'
 
-const writeToLog = async (folder, file, data) => await fs.appendFile(`${ __appdir }/${folder}/${file}`, data)
+const writeToLogSync = (folder, file, data) => appendFileSync(`${ __appdir }/${folder}/${file}`, data)
+const writeToLogAsync = async (folder, file, data) => await fs.appendFile(`${ __appdir }/${folder}/${file}`, data)
 
-export { writeToLog }
+export { writeToLogSync, writeToLogAsync }

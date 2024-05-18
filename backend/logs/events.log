@@ -7,6 +7,5 @@
    ';;:;  =./)_
      `"=\_  )_"`
           ``'"`
-EVENT - GET( 200 ) - 2024-05-18 01:59:42 - /api/v1/squirlchain/fetchsquirls 
-ERROR - GET( 500 ) - 2024-05-18 01:59:53 - /api/v1/squirlchain/fetchsquirls55  - No ( GET 200 ) nuts for you...
-
+EVENT - GET( 200 ) - 2024-05-18 08:04:18 - /api/v1/squirlchain/fetchsquirls 
+ERROR - GET( 500 ) - 2024-05-18 08:04:31 - /api/v1/squirlchain/fetchsquirlsWRONGNUTZ  - No ( GET 200 ) nuts for you...
