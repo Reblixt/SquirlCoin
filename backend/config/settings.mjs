@@ -26,7 +26,7 @@ export const fullEndpoint = {
 
   // fetch routes
   fetchAll: base + "/fetchsquirls",
-  fetchOne: base + "/fetchsquirls/:id",
+  fetchOne: base + "/fetchsquirls/:blockNumber",
 
   // transact routes
   transact: base + "/nuttrading",
@@ -37,7 +37,7 @@ export const singleEndpoint = {
   blockCreate: "/breed",
 
   fetchAll: "/fetchsquirls",
-  fetchOne: "/fetchsquirls/:id",
+  fetchOne: "/fetchsquirls/:blockNumber",
 
   transactions: "/nuttradings",
   transact: "/nuttrading",
@@ -57,7 +57,7 @@ export const fullEndpoint = {
 
   // fetch routes
   fetchAll: base + "/listchain",
-  fetchOne: base + "/listchain/:id",
+  fetchOne: base + "/listchain/:blockNumber",
 
   // transact routes
   transact: base + "/transactions",
@@ -68,7 +68,7 @@ export const singleEndpoint = {
   blockCreate: "/mine",
 
   fetchAll: "/listchain",
-  fetchOne: "/listchain/:id",
+  fetchOne: "/listchain/:blockNumber",
 
   transactions: "/transactions",
   transact: "/transact",
