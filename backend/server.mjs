@@ -1,14 +1,14 @@
 import express from "express";
 import cors from "cors";
-import mainRouter from "./Router.mjs";
-import { fullEndpoint } from "./config/settings.mjs";
+import path from "path";
 import Blockchain from "./models/Blockchain.mjs";
 import RedisServer from "./redisServer.mjs";
+import mainRouter from "./Router.mjs";
+import { fullEndpoint } from "./config/settings.mjs";
 import { loggEvent } from "./middleware/event-log.mjs";
 import { handleError, handleUndefined } from "./middleware/error-handler.mjs";
 import { fileURLToPath } from "url";
-import path from "path";
-import { synchronizeChain } from "./utilities/utilities";
+import { synchronizeChain } from "./utilities/utilities.mjs";
 
 global.__appdir = path.dirname(fileURLToPath(import.meta.url));
 
@@ -37,12 +37,12 @@ app.use((req, res, next) => {
 app.use(loggEvent);
 app.use(fullEndpoint.base, mainRouter);
 
-app.all("*", handleUndefined);
-app.use(handleError);
-
-if (process.env.NODE_PORT === "true") {
+if (process.env.GENERATE_NODE_PORT === "true") {
   NODE_PORT = DEFAULT_PORT + Math.ceil(Math.random() * 1000);
 }
+
+app.all("*", handleUndefined);
+app.use(handleError);
 
 const PORT = NODE_PORT || DEFAULT_PORT;
 
