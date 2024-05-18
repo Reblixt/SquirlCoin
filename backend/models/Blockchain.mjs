@@ -1,4 +1,4 @@
-import Block from './Block.mjs';
+import Block from "./Block.mjs";
 
 export class Blockchain {
   constructor() {
@@ -15,6 +15,12 @@ export class Blockchain {
 
   addTransaction(transaction) {
     this.transactions.push(transaction);
+  }
+
+  replaceChain(chain) {
+    if (chain.length <= this.chain.length) return;
+    if (!Blockchain.ValidChain(chain)) return;
+    this.chain = chain;
   }
 
   validateChain() {

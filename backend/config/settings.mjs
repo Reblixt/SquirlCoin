@@ -3,8 +3,9 @@ const INITIAL_DIFFICULTY = 3;
 
 export const GENESIS_DATA = {
   timestamp: Date.now(),
-  lastHash: '0',
-  hash: '0',
+  blockNumber: 0,
+  lastHash: "0",
+  hash: "0",
   difficulty: INITIAL_DIFFICULTY,
   nonce: 0,
   data: [],
@@ -13,33 +14,33 @@ export const GENESIS_DATA = {
 // This file contains the endpoints for the API. The base url is /api/v1/squirlchain.
 // Comment line 4 thrue 31 for easier grading this assignment and uncomment the section below.
 
-const base = '/api/v1/squirlchain';
+const base = "/api/v1/squirlchain";
 
 export const fullEndpoint = {
   // base url in Server.mjs
   base: base,
 
   // Block routes
-  block: base + '/block',
-  blockCreate: base + '/block/breed',
+  block: base + "/block",
+  blockCreate: base + "/block/breed",
 
   // fetch routes
-  fetchAll: base + '/fetchsquirls',
-  fetchOne: base + '/fetchsquirls/:id',
+  fetchAll: base + "/fetchsquirls",
+  fetchOne: base + "/fetchsquirls/:id",
 
   // transact routes
-  transact: base + '/nuttrading',
+  transact: base + "/nuttrading",
 };
 
 export const singleEndpoint = {
-  block: '/block',
-  blockCreate: '/breed',
+  block: "/block",
+  blockCreate: "/breed",
 
-  fetchAll: '/fetchsquirls',
-  fetchOne: '/fetchsquirls/:id',
+  fetchAll: "/fetchsquirls",
+  fetchOne: "/fetchsquirls/:id",
 
-  transactions: '/nuttradings',
-  transact: '/nuttrading',
+  transactions: "/nuttradings",
+  transact: "/nuttrading",
 };
 
 // uncomment the following section for easier grading this assignment
