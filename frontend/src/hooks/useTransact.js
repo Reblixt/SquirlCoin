@@ -5,13 +5,16 @@ export const useTransact = () => {
 
   const sendTransaction = async (transactionBody) => {
     try {
-      const response = await fetch('http://localhost:3001/api/v1/transaction', {
-        method: 'POST',
-        body: JSON.stringify(transactionBody),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      const response = await fetch(
+        'http://localhost:5001/api/v1/squirlchain/nuttradings/nuttrading',
+        {
+          method: 'POST',
+          body: JSON.stringify(transactionBody),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

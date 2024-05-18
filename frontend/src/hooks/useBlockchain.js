@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 export const useBlockchain = () => {
   const [blockchain, setBlockchain] = useState([]);
+  const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -9,7 +10,7 @@ export const useBlockchain = () => {
     const fetchBlockchain = async () => {
       try {
         const response = await fetch(
-          'http://localhost:3001/api/v1/blockchain',
+          'http://localhost:5001/api/v1/squirlchain/fetchsquirls',
           {
             method: 'GET',
             headers: {
@@ -24,6 +25,7 @@ export const useBlockchain = () => {
 
         const result = await response.json();
         setBlockchain(result.data.chain);
+        setTransactions(result.data.transactions);
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -34,5 +36,5 @@ export const useBlockchain = () => {
     fetchBlockchain();
   }, []);
 
-  return { blockchain, loading, error };
+  return { transactions, blockchain, loading, error };
 };
