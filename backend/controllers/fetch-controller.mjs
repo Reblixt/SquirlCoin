@@ -6,9 +6,10 @@ export const listChain = (req, res, next) => {
 };
 
 export const fetchOneBlock = (req, res, next) => {
-  console.log(req.params.blockNumber);
+  console.log(typeof req.params.blockNumber);
+  console.log(typeof blockchain.chain[0].blockNumber);
   const block = blockchain.chain.find(
-    (block) => block.blockNumber === req.params.blockNumber,
+    (block) => block.blockNumber === parseInt(req.params.blockNumber),
   );
   if (!block) {
     return res

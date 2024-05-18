@@ -37,7 +37,7 @@ export const singleEndpoint = {
   blockCreate: "/breed",
 
   fetchAll: "/fetchsquirls",
-  fetchOne: "/fetchsquirls/:blockNumber",
+  fetchOne: "/:blockNumber",
 
   transactions: "/nuttradings",
   transact: "/nuttrading",
