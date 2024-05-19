@@ -1,4 +1,4 @@
-# SquirlCoin <--- was meant to be...
+# SquirlCoin
 
 ## Team members:
 
@@ -9,8 +9,7 @@
 
 ## Agile:
 
-Dailystand 8:30.
-Weekends rest
+Daily standup weekdays at 8:30 AM.
 
 ## Endpoints use in the original
 
