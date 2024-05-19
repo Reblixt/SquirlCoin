@@ -1,3 +1,178 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+#menu-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  margin: 25px;
+}
+#menu-icon:focus {
+  outline: none;
+}
+#menu-icon span {
+  width: 2rem;
+  height: 0.25rem;
+  background: #333;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  transform-origin: 1px;
+  transition: all 0.1s ease-in-out;
+}
+#menu-icon.open span:first-child {
+  transform: rotate(45deg);
+}
+#menu-icon.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+#menu-icon.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+@media (max-width: 768px) {
+  #menu-icon {
+    display: flex;
+  }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    background: #fff;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+}
+.footer {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 100px;
+}
+
+.footer-links,
+.social-links,
+.copyright {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.footer-links a,
+.social-links a {
+  color: #8B4513;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.footer-links a:hover,
+.social-links a:hover {
+  color: #D2B48C;
+}
+.footer-links a img,
+.social-links a img {
+  width: 28px;
+  height: 28px;
+}
+.footer-links a img:hover,
+.social-links a img:hover {
+  filter: brightness(0) invert(1);
+  transform: scale(1.3);
+  transition: transform 0.4s ease;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  order: 2;
+}
+.copyright p {
+  color: #000;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
