@@ -1,0 +1,16 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-logo {
+  display: none;
+  width: 30%;
+  height: auto;
+
+  @media (max-width: 1119px) {
+    display: block;
+  }
+}

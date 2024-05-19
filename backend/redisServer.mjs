@@ -1,7 +1,7 @@
-import redis from 'redis';
+import redis from "redis";
 
 const CHANNELS = {
-  BLOCKCHAIN: 'BLOCKCHAIN',
+  BLOCKCHAIN: "BLOCKCHAIN",
 };
 
 export default class RedisServer {
@@ -13,7 +13,7 @@ export default class RedisServer {
 
     this.loadChannels();
 
-    this.subscriber.on('message', (channel, message) =>
+    this.subscriber.on("message", (channel, message) =>
       this.messageHandler(channel, message),
     );
   }
@@ -35,7 +35,7 @@ export default class RedisServer {
     const msg = JSON.parse(message);
 
     if (channel === CHANNELS.BLOCKCHAIN) {
-      console.log('REPLACE IS IN PROGRESS', msg);
+      console.log("REPLACE IS IN PROGRESS", msg);
       this.blockchain.replaceChain(msg);
     }
   }

@@ -6,9 +6,9 @@ export const GENESIS_DATA = {
   blockNumber: 0,
   lastHash: "0",
   hash: "0",
-  difficulty: INITIAL_DIFFICULTY,
-  nonce: 0,
   data: [],
+  nonce: 0,
+  difficulty: INITIAL_DIFFICULTY,
 };
 
 // This file contains the endpoints for the API. The base url is /api/v1/squirlchain.

@@ -7,13 +7,13 @@ import { Navbar } from "../components/Header/Navbar";
 export const Layout = () => {
   return (
       <>
-        <header> ----------- HEADER -----------
+        <header>
           <Navbar />
         </header>
-        <main> ----------- MAIN -----------
+        <main>
           <Outlet />
         </main>
-        <footer> ----------- FOOTER -----------
+        <footer>
           <Footer />
         </footer>
       </>
