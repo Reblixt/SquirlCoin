@@ -48,6 +48,26 @@ h6 {
   isolation: isolate;
 }
 
+body {
+  color: #000;
+  font-family: "Tsukimi Rounded", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2 {
+  font-family: "Coiny", sans-serif;
+  color: #8B4513;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
 nav {
   padding: 15px 20px;
   display: flex;
@@ -116,6 +136,24 @@ nav .nav-links .current {
   }
 }
 
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-logo {
+  display: none;
+  width: 30%;
+  height: auto;
+}
+@media (max-width: 1119px) {
+  .mobile-logo {
+    display: block;
+  }
+}
+
 #menu-icon {
   display: none;
   flex-direction: column;
@@ -149,7 +187,7 @@ nav .nav-links .current {
 #menu-icon.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(2px);
 }
-@media (max-width: 768px) {
+@media (max-width: 1119px) {
   #menu-icon {
     display: flex;
   }
@@ -166,7 +204,7 @@ nav .nav-links .current {
   padding: 0 15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1119px) {
   .nav-links {
     display: none;
     flex-direction: column;
