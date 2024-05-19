@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useBlockchain } from '../hooks/useBlockchain';
+import logo from '../content/img/sqrrrl-logo.png';
 
 export const Blockchain = () => {
 
   const { blockchain, loading, error } = useBlockchain();
 
   return (
-    <div>
+    <div className="blockchain-container">
+      <img src={logo} alt="Logo" className="mobile-logo" />
       <h2>Squirl Chain</h2>
       <section>
       {loading && <div>Loading...</div>}
