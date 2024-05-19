@@ -1,7 +1,8 @@
+import ResponseModel from "../models/ResponseModel.mjs";
 import { blockchain } from "../server.mjs";
 
 export const listChain = (req, res, next) => {
-  res.status(200).json({ success: true, statusCode: 200, data: blockchain });
+  res.status(200).json(ResponseModel.get('', blockchain));
 };
 
 export const fetchOneBlock = (req, res, next) => {
@@ -11,7 +12,7 @@ export const fetchOneBlock = (req, res, next) => {
   if (!block) {
     return res
       .status(404)
-      .json({ success: false, statusCode: 404, message: "Block not found" });
+      .json(ResponseModel.error(404, 'Block not found...'));
   }
   res.status(200).json({ success: true, statusCode: 200, data: block });
 };
