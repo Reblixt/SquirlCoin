@@ -1,3 +1,4 @@
+import { createHash } from "../utilities/crypto-lib.mjs";
 import Block from "./Block.mjs";
 
 export class Blockchain {
@@ -20,23 +21,43 @@ export class Blockchain {
   }
 
   replaceChain(chain) {
+    console.log("Replace chain is called", chain);
     if (chain.length <= this.chain.length) return;
-    if (!Blockchain.ValidChain(chain)) return;
+    if (!Blockchain.validateChain(chain)) return;
     this.chain = chain;
   }
 
-  validateChain() {
-    for (let i = 1; i < this.chain.length; i++) {
-      const currentBlock = this.chain[i];
-      const previousBlock = this.chain[i - 1];
+  static validateChain(chain) {
+    if (JSON.stringify(chain[0]) !== JSON.stringify(Block.genesis))
+      return false;
 
-      if (currentBlock.hash !== currentBlock.calculateHash()) {
-        return false;
-      }
+    for (let i = 1; i < chain.length; i++) {
+      const {
+        timestamp,
+        blockNumber,
+        lastHash,
+        hash,
+        data,
+        nonce,
+        difficulty,
+      } = chain[i];
 
-      if (currentBlock.lastHash !== previousBlock.hash) {
-        return false;
-      }
+      const currentLastHash = chain[i - 1].hash;
+      const lastDifficulty = chain[i - 1].difficulty;
+
+      if (lastHash !== currentLastHash) return false;
+      if (Math.abs(lastDifficulty - difficulty) > 1) return false;
+
+      const validatedHash = createHash(
+        timestamp,
+        blockNumber,
+        lastHash,
+        hash,
+        data,
+        nonce,
+        difficulty,
+      );
+      if (hash !== validatedHash) return false;
     }
     return true;
   }
