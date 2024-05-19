@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useTransact } from '../hooks/useTransact';
 import { useBlockchain } from '../hooks/useBlockchain';
+import logo from '../content/img/sqrrrl-logo.png';
 
 export const Transact = () => {
 
@@ -28,34 +29,35 @@ export const Transact = () => {
   }
 
   return (
-    <div>
+    <div className="transact-container">
+      <img src={logo} alt="Logo" className="mobile-logo" />
       <h2>Nut trading</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="trading-recipient">Skicka till</label>
+        <label htmlFor="trading-recipient">Send to</label>
         <input type="text" id="trading-recipient" name="recipient" value={transactionBody.recipient} onChange={handleChange}></input>
-        <label htmlFor="trading-amount">Antal</label>
+        <label htmlFor="trading-amount">Amount</label>
         <input type="text" id="trading-amount" name="amount" value={transactionBody.amount} onChange={handleChange}></input>
-        <label htmlFor="trading-sender">Skicka från</label>
+        <label htmlFor="trading-sender">Send from</label>
         <input type="text" id="trading-sender" name="sender" value={transactionBody.sender} onChange={handleChange}></input>
-        <label htmlFor="trading-data">Meddelande</label>
+        <label htmlFor="trading-data">Message</label>
         <input type="text" id="trading-data" name="data" value={transactionBody.data} onChange={handleChange}></input>
         <button>Submit</button>
       </form>
       {transaction && 
       <section>
-        Här visas info om senaste transaktionen som lagts på kö:
+        Info about the latest transaction that has been qued:
         <span>recipient: {transaction.recipient}</span>
         <span>amount: {transaction.amount}</span>
         <span>sender: {transaction.sender}</span>
         <span>data: {transaction.data}</span>
-        <button onClick={() => duplicateTx(transaction)}>Kopiera transaktion</button>
+        <button onClick={() => duplicateTx(transaction)}>Copy transaction</button>
       </section>
       }
       <section>
-        <button onClick={() => setDisplayTrades(prevState => !prevState)}>Visa/dölj tidigare transaktioner på kö</button>
+        <button onClick={() => setDisplayTrades(prevState => !prevState)}>Show/hide previous transactions in queue</button>
         {displayTrades && 
         <>
-        Här visas info om alla transaktioner som ligger på kö:
+        Displaying info about all transactions that are in the queue:
         {transactions && 
         transactions.map((nuttrade, index) => 
         <div key={index}>
@@ -63,7 +65,7 @@ export const Transact = () => {
         <span>Recipient: {nuttrade.recipient}</span>
         <span>Amount: {nuttrade.amount}</span>
         <span>Data: {nuttrade.data}</span>
-        <button onClick={() => duplicateTx(nuttrade)}>Kopiera transaktion</button>
+        <button onClick={() => duplicateTx(nuttrade)}>Copy transaction</button>
         </div>)
         }
         </>

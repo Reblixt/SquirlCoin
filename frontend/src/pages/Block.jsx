@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useBlockchain } from '../hooks/useBlockchain';
 import { useBlock } from '../hooks/useBlock';
+import logo from '../content/img/sqrrrl-logo.png';
 
 export const Block = () => {
 
@@ -17,7 +18,8 @@ export const Block = () => {
   console.log(indexNumber);
 
   return (
-    <div>
+    <div className="block-container">
+      <img src={logo} alt="Logo" className="mobile-logo" />
       <h2>Enskilt block</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="block-number">Block index nummer</label>
