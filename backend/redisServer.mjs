@@ -2,6 +2,7 @@ import redis from "redis";
 
 const CHANNELS = {
   BLOCKCHAIN: "BLOCKCHAIN",
+  TRANSACTION: "TRANSACTION",
 };
 
 export default class RedisServer {
@@ -25,6 +26,13 @@ export default class RedisServer {
     });
   }
 
+  broadcastTransaction() {
+    this.publish({
+      channel: CHANNELS.TRANSACTION,
+      message: JSON.stringify(this.blockchain.transactions),
+    });
+  }
+
   loadChannels() {
     Object.values(CHANNELS).forEach((channel) =>
       this.subscriber.subscribe(channel),
@@ -37,6 +45,8 @@ export default class RedisServer {
     if (channel === CHANNELS.BLOCKCHAIN) {
       //console.log("REPLACE IS IN PROGRESS", msg);
       this.blockchain.replaceChain(msg);
+    } else if (channel === CHANNELS.TRANSACTION) {
+      this.blockchain.replaceTransactions(msg);
     }
   }
 

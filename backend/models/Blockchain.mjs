@@ -20,6 +20,16 @@ export class Blockchain {
 
   addTransaction(transaction) {
     this.transactions.push(transaction);
+    redisServer.broadcastTransaction();
+    if (this.transactions.length >= 3) {
+      this.addBlock();
+    }
+  }
+
+  replaceTransactions(transactions) {
+    if (transactions.length <= this.transactions.length) return;
+    if (transactions.length < 3) return (this.transactions = []);
+    this.transactions = transactions;
   }
 
   replaceChain(chain) {
