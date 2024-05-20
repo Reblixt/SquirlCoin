@@ -16,3 +16,4 @@ export const fetchOneBlock = (req, res, next) => {
   }
   res.status(200).json(ResponseModel.get('', block));
 };
+
