@@ -1,5 +1,3 @@
-@import 'colors';
-
 .footer {
   background-color: $color-white;
   display: flex;
@@ -7,10 +5,9 @@
   align-items: center;
   text-align: center;
   position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
-  padding: 10px 0;
+  left: 5%;
+  width: 90%;
   margin-top: 100px; 
 }
 
