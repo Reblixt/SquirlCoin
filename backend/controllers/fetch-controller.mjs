@@ -14,5 +14,5 @@ export const fetchOneBlock = (req, res, next) => {
       .status(404)
       .json(ResponseModel.error(404, 'Block not found...'));
   }
-  res.status(200).json({ success: true, statusCode: 200, data: block });
+  res.status(200).json(ResponseModel.get('', block));
 };
