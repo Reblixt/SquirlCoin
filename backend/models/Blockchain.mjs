@@ -10,6 +10,7 @@ export class Blockchain {
 
   addBlock() {
     const lastBlock = this.chain[this.chain.length - 1];
+    console.log(lastBlock.blockNumber, this.chain.at(-1).blockNumber)
     const data = this.transactions;
     const newBlock = Block.mineBlock({ lastBlock, data });
     this.chain.push(newBlock);
@@ -18,8 +19,11 @@ export class Blockchain {
     return newBlock;
   }
 
+
   addTransaction(transaction) {
     this.transactions.push(transaction);
+    const length = this.transactions.length
+    if(length >= 3) this.addBlock()
   }
 
   replaceChain(chain) {
