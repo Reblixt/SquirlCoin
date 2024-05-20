@@ -1,6 +1,6 @@
-# SquirlCoin <--- was meant to be...
+# SquirlCoin
 
-## Teammembers:
+## Team members:
 
 - Oskar
 - Rasmus
@@ -9,13 +9,17 @@
 
 ## Agile:
 
-Dailystand 8:30.
-Weekends rest
+Daily standup weekdays at 8:30 AM.
 
-http://squirlcoin.com/api/v1/squirl/listsquirls
-http://squirlcoin.com/squirl/fetchsquirl
-http://squirlcoin.com/squirl/Block/minesquirl
-http://squirlcoin.com/squirl/transactions
-http://squirlcoin.com/squirl/transactions/transactsquirl
+## Endpoints use in the original
 
-serverfilen
+http://localhost:5001/api/v1/squirlchain/fetchsquirls
+http://localhost:5001/api/v1/squirlchain/fetchsquirls/1
+http://localhost:5001/api/v1/squirlchain/block/breed
+http://localhost:5001/api/v1/squirlchain/nuttradings/nuttrading
+
+## Dev enviroment
+
+- system: sudo service redis-server start
+- /backend npm run dev
+- /frontend npm run dev

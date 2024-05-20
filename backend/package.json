@@ -4,13 +4,17 @@
   "description": "SquirlChain",
   "main": "server.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "dev": " npm run start-redis && nodemon server.mjs",
+    "dev-node": "cross-env GENERATE_NODE_PORT='true' nodemon server.mjs",
+    "start-redis": "redis-server --daemonize yes"
   },
   "author": "Carl, Rasmus, Sanjin, Oskar",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "hex-to-binary": "^1.0.1",
     "redis": "^2.8.0"
   },
   "devDependencies": {

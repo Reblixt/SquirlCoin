@@ -1,0 +1,64 @@
+body {
+  background-color: gold;
+
+  @media (max-width: 1119px) {
+    background-color: white;
+  }
+}
+
+.block-container,
+.blockchain-container,
+.home-container,
+.transact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px 20px;
+  background-color: #fff;
+  min-height: 80vh;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f0f0f0;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+  font-size: 16px;
+}
+
+button {
+  background-color: $color-gold;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($color-gold, 10%);
+  }
+}
+
+.mobile-logo {
+  display: none;
+  width: 30%;
+  height: auto;
+
+  @media (max-width: 1119px) {
+    display: block;
+  }
+}
