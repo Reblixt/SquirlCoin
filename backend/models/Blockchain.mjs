@@ -1,3 +1,4 @@
+import { redisServer } from "../server.mjs";
 import { createHash } from "../utilities/crypto-lib.mjs";
 import Block from "./Block.mjs";
 
@@ -12,6 +13,7 @@ export class Blockchain {
     const data = this.transactions;
     const newBlock = Block.mineBlock({ lastBlock, data });
     this.chain.push(newBlock);
+    redisServer.broadcast();
     this.transactions = [];
     return newBlock;
   }
@@ -21,7 +23,6 @@ export class Blockchain {
   }
 
   replaceChain(chain) {
-    console.log("Replace chain is called", chain);
     if (chain.length <= this.chain.length) return;
     if (!Blockchain.validateChain(chain)) return;
     this.chain = chain;
@@ -32,15 +33,7 @@ export class Blockchain {
       return false;
 
     for (let i = 1; i < chain.length; i++) {
-      const {
-        timestamp,
-        blockNumber,
-        lastHash,
-        hash,
-        data,
-        nonce,
-        difficulty,
-      } = chain[i];
+      const { timestamp, lastHash, hash, data, nonce, difficulty } = chain[i];
 
       const currentLastHash = chain[i - 1].hash;
       const lastDifficulty = chain[i - 1].difficulty;
@@ -50,9 +43,7 @@ export class Blockchain {
 
       const validatedHash = createHash(
         timestamp,
-        blockNumber,
         lastHash,
-        hash,
         data,
         nonce,
         difficulty,

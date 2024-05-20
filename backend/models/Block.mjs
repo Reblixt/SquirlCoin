@@ -37,14 +37,7 @@ class Block {
       nonce++;
       timestamp = Date.now();
       difficulty = Block.adjustDifficultyLevel({ block: lastBlock, timestamp });
-      hash = createHash(
-        timestamp,
-        lastBlockNumber,
-        lastHash,
-        data,
-        nonce,
-        difficulty,
-      );
+      hash = createHash(timestamp, lastHash, data, nonce, difficulty);
     } while (
       hexToBinary(hash).substring(0, difficulty) !== "0".repeat(difficulty)
     );

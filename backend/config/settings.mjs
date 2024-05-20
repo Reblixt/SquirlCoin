@@ -2,7 +2,7 @@ export const MINE_RATE = 5000;
 const INITIAL_DIFFICULTY = 3;
 
 export const GENESIS_DATA = {
-  timestamp: Date.now(),
+  timestamp: 1,
   blockNumber: 0,
   lastHash: "0",
   hash: "0",

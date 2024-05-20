@@ -35,7 +35,7 @@ export default class RedisServer {
     const msg = JSON.parse(message);
 
     if (channel === CHANNELS.BLOCKCHAIN) {
-      console.log("REPLACE IS IN PROGRESS", msg);
+      //console.log("REPLACE IS IN PROGRESS", msg);
       this.blockchain.replaceChain(msg);
     }
   }
