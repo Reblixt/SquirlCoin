@@ -6,10 +6,10 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-links">
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/trade"}>Trade</NavLink>
-        <NavLink to={"/market"}>Market</NavLink>
-        <NavLink to={"/about"}>About</NavLink>
+        <NavLink to={"/"}>Squirl Coin</NavLink>
+        <NavLink to={"/transact"}>Nut trading</NavLink>
+        <NavLink to={"/blockchain"}>Blockchain</NavLink>
+        <NavLink to={"/block"}>Block</NavLink>
       </div>
       <div className="copyright">
         <p>© 2024 No nuts given, no nuts lost.</p>

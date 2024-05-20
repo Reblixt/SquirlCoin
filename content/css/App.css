@@ -103,7 +103,7 @@ nav .nav-links li a {
   text-decoration: none;
 }
 nav .nav-links li a:hover {
-  color: #FFD700;
+  color: #000;
 }
 nav .nav-links .current {
   color: #228B22;
@@ -133,7 +133,8 @@ nav .nav-links .logo {
     left: 0;
     background: #FFD700;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 10%;
     z-index: 99;
   }
   nav .nav-links.open {
@@ -162,6 +163,7 @@ body {
   min-height: 80vh;
   max-width: 90%;
   margin: 0 auto;
+  border-radius: 5px;
 }
 
 input[type=text] {
@@ -280,11 +282,13 @@ button:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 5%;
   width: 90%;
   margin-top: 100px;
+  padding-top: 15px;
+  border-radius: 5px;
 }
 
 .footer-links,
@@ -314,7 +318,7 @@ button:hover {
 }
 .footer-links a img:hover,
 .social-links a img:hover {
-  filter: brightness(0) invert(1);
+  opacity: 0.7;
   transform: scale(1.3);
   transition: transform 0.4s ease;
 }
