@@ -24,6 +24,6 @@ Daily standup weekdays at 8:30 AM.
 - /backend npm run dev
 - /frontend npm run dev
 
-## :camera_with_flash: Screenshot
+## :camera_flash: Screenshot
 
 ![Squirl Coin Screenshot](frontend/src/content/img/sqrrrl-coin-screenshot.png)
