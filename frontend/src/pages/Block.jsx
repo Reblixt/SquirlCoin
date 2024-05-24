@@ -20,9 +20,9 @@ export const Block = () => {
   return (
     <div className="block-container">
       <img src={logo} alt="Logo" className="mobile-logo" />
-      <h2>Enskilt block</h2>
+      <h2>Single Block</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="block-number">Block index nummer</label>
+        <label htmlFor="block-number">Block index number</label>
         <input type="text" id="block-number" name="block-number" onChange={(e) => setIndexNumber(e.target.value)}></input>
         <button>Submit</button>
       </form>
