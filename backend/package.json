@@ -6,6 +6,7 @@
   "scripts": {
     "test": "vitest",
     "dev": " npm run start-redis && nodemon server.mjs",
+    "devwin": "nodemon server.mjs",
     "dev-node": "cross-env GENERATE_NODE_PORT='true' nodemon server.mjs",
     "start-redis": "redis-server --daemonize yes"
   },

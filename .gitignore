@@ -1,4 +1,4 @@
-# Logs
+# Logs and debug files
 logs
 *.log
 npm-debug.log*
@@ -7,9 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependency directories
 node_modules
+
+# Build output
 dist
 dist-ssr
+
+# Local development
 *.local
 
 # Editor directories and files
@@ -17,8 +22,21 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+
+# OS generated files - MacOS
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+
+# OS generated files - Linux
+*~
+
+# Vim swap files
 *.sw?
+
+# Other
+*.bak
+*.tmp
+*.temp
