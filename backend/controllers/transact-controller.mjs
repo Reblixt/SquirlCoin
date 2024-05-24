@@ -8,7 +8,7 @@ export const createTransaction = (req, res, next) => {
     data = "No additional data provided for this transaction";
   }
   const transaction = { sender, recipient, amount, data };
-  blockchain.addTransaction(transaction);
-
+  req.redisServer.broadcastTransaction(transaction)
   res.status(201).json(ResponseModel.post('', transaction));
 };
+

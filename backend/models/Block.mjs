@@ -60,17 +60,6 @@ class Block {
 
     return difficulty + 1;
   }
-
-  calculateHash() {
-    return createHash(
-      this.timestamp,
-      this.lastHash,
-      this.blockNumber,
-      this.data,
-      this.nonce,
-      this.difficulty,
-    );
-  }
 }
 
 export default Block;

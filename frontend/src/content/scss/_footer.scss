@@ -4,11 +4,13 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 5%;
   width: 90%;
   margin-top: 100px; 
+  padding-top: 15px;
+  border-radius: 5px;
 }
 
 .footer-links,
@@ -36,7 +38,7 @@
     height: 28px;
 
     &:hover {
-      filter: brightness(0) invert(1);
+      opacity: 0.7;
       transform: scale(1.3);
       transition: transform 0.4s ease;
     }

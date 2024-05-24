@@ -71,7 +71,7 @@ h2 {
 nav {
   padding: 15px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 nav #menu-icon {
@@ -91,6 +91,7 @@ nav .nav-links {
   margin: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 nav .nav-links li {
@@ -103,7 +104,7 @@ nav .nav-links li a {
   text-decoration: none;
 }
 nav .nav-links li a:hover {
-  color: #FFD700;
+  color: #000;
 }
 nav .nav-links .current {
   color: #228B22;
@@ -133,7 +134,8 @@ nav .nav-links .logo {
     left: 0;
     background: #FFD700;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 5%;
     z-index: 99;
   }
   nav .nav-links.open {
@@ -142,7 +144,7 @@ nav .nav-links .logo {
 }
 
 body {
-  background-color: gold;
+  background-color: #FFD700;
 }
 @media (max-width: 1119px) {
   body {
@@ -162,6 +164,16 @@ body {
   min-height: 80vh;
   max-width: 90%;
   margin: 0 auto;
+  border-radius: 5px;
+}
+@media (max-width: 1119px) {
+  .block-container,
+  .blockchain-container,
+  .home-container,
+  .transact-container {
+    border: 1px solid #FFD700;
+    margin-top: 20px;
+  }
 }
 
 input[type=text] {
@@ -179,6 +191,7 @@ label {
   margin-bottom: 5px;
   display: block;
   font-size: 16px;
+  padding: 5px;
 }
 
 button {
@@ -189,11 +202,13 @@ button {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
+  margin: 10px auto;
   transition: background-color 0.3s ease;
+  display: block;
 }
 button:hover {
-  background-color: #ccac00;
+  background-color: #e6c200;
+  transform: scale(1.05);
 }
 
 .mobile-logo {
@@ -270,6 +285,74 @@ button:hover {
     align-items: center;
     justify-content: center;
   }
+  .nav-links #menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 999;
+    margin: 25px;
+  }
+  .nav-links #menu-icon:focus {
+    outline: none;
+  }
+  .nav-links #menu-icon span {
+    width: 2rem;
+    height: 0.25rem;
+    background: #333;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    transform-origin: 1px;
+    transition: all 0.1s ease-in-out;
+  }
+  .nav-links #menu-icon.open span:first-child {
+    transform: rotate(45deg) translateY(-1px);
+  }
+  .nav-links #menu-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-links #menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(2px);
+  }
+}
+@media (max-width: 1119px) and (max-width: 1119px) {
+  .nav-links #menu-icon {
+    display: flex;
+  }
+}
+@media (max-width: 1119px) {
+  .nav-links .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  .nav-links .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 1119px) and (max-width: 1119px) {
+  .nav-links .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-links .nav-links.open {
+    display: flex;
+  }
+}
+@media (max-width: 1119px) {
   .nav-links.open {
     display: flex;
   }
@@ -280,11 +363,13 @@ button:hover {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 5%;
   width: 90%;
   margin-top: 100px;
+  padding-top: 15px;
+  border-radius: 5px;
 }
 
 .footer-links,
@@ -314,7 +399,7 @@ button:hover {
 }
 .footer-links a img:hover,
 .social-links a img:hover {
-  filter: brightness(0) invert(1);
+  opacity: 0.7;
   transform: scale(1.3);
   transition: transform 0.4s ease;
 }

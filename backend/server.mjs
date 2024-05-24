@@ -15,6 +15,7 @@ global.__appdir = path.dirname(fileURLToPath(import.meta.url));
 export const blockchain = new Blockchain();
 export const redisServer = new RedisServer({ blockchain });
 
+
 const app = express();
 app.use(express.json());
 app.use(cors());
